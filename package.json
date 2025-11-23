@@ -1,0 +1,28 @@
+{
+  "name": "snake",
+  "version": "1.0.0",
+  "description": "A typescript snake game",
+  "homepage": "https://github.com/Tinsiag/snake#readme",
+  "bugs": {
+    "url": "https://github.com/Tinsiag/snake/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tinsiag/snake.git"
+  },
+  "license": "ISC",
+  "author": "Tinsiag",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo \\\"Error : no test specified\\\" && exit 1\"",
+    "build": "webpack",
+    "start": "webpack server --open edge.exe"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "webpack": "^5.103.0",
+    "webpack-cli": "^6.0.1"
+  }
+}
