@@ -12,7 +12,8 @@ module.exports ={
         filename : "bundle.js",
         // 告诉webpack不适用箭头函数
         environment:{
-            arrowFunction : false
+            arrowFunction : false,
+            const :false
         }
     },
     module:{
