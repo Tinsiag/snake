@@ -14,11 +14,18 @@ class Snake{
         return this.head.offsetTop;
     }
     set x(value:number){
-        this.head.style.left = value +'';
+        if (value>=0&& value<=294){
+            this.head.style.left = value +'px';
+
+        }
     }
 
     set y(value:number){
-        this.head.style.top = value +'';
+        if (value>=0&& value<=294){
+        
+            this.head.style.top = value +'px';
+    
+        }
     }
     addBody(){
         this.element.insertAdjacentHTML("beforeend","<div></div>");
