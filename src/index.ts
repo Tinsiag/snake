@@ -1,3 +1,3 @@
 import './style/index.less';
-import Food from './moduls/Food';
-import ScorePanel from './moduls/ScorePanel';
+import GameControl from './moduls/GameControl';
+const ga = new GameControl();
