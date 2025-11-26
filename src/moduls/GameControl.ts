@@ -41,11 +41,25 @@ class GameControl{
                 X +=10;
                 break;
         }
-        this.snake.x = X;
-        this.snake.y = Y;
+        this.checkEat(X,Y);
+        try {
+            this.snake.x = X;
+            this.snake.y = Y;
+        } catch (e:any) {
+            alert(e.message);
+            this.isLive=false;
+        }
         //定时器
         this.isLive&&setTimeout(this.run.bind(this),300-(this.scorePanel.level-1)*3)
 
+    }
+    // checkeat
+    checkEat(x:number,y:number){
+        if(x === this.food.x&&y === this.food.y){
+            this.food.change();
+            this.scorePanel.addScore();
+            this.snake.addBody();           
+        }
     }
 
     

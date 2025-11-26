@@ -14,21 +14,41 @@ class Snake{
         return this.head.offsetTop;
     }
     set x(value:number){
-        if (value>=0&& value<=294){
-            this.head.style.left = value +'px';
-
+        if (this.x===value){
+            return;
         }
+
+        if (value<0 ||value>304){
+            throw new Error('撞墙了')
+        }
+        this.head.style.left = value +'px';
+
     }
 
     set y(value:number){
-        if (value>=0&& value<=294){
-        
-            this.head.style.top = value +'px';
-    
+        if(this.y === value){
+            return;
         }
+
+        if (value<0 ||value>304){
+            throw new Error('撞墙了')
+        }
+
+        this.head.style.top = value +'px';
+
     }
     addBody(){
         this.element.insertAdjacentHTML("beforeend","<div></div>");
+    }
+    moveBody(){
+        for(let i =this.body.length-1;i>0;i--){
+            let X = (this.body[i-1] as HTMLElement).offsetLeft;
+            let Y = (this.body[i-1] as HTMLElement).offsetTop;
+            (this.body[i] as HTMLElement).style.left =X +'px';
+            (this.body[i] as HTMLElement).style.top = Y +'px';
+        }
+        
+
     }
     
 }
