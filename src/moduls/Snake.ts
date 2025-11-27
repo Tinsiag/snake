@@ -50,6 +50,14 @@ class Snake{
         
 
     }
+    checkHeadBody(X:number,Y:number){
+        for (let i = 4 ;i<this.body.length;i++){
+            let hd = this.body[i] as HTMLElement;
+            if (hd.offsetLeft===X&&hd.offsetTop===Y){
+                throw new Error("撞身体了")
+            }
+        }
+    }
     
 }
 export default Snake;
