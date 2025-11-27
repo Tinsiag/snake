@@ -22,7 +22,7 @@ class Snake{
             throw new Error('撞墙了')
         }
         this.head.style.left = value +'px';
-
+        this.checkHeadBody();
     }
 
     set y(value:number){
@@ -35,7 +35,8 @@ class Snake{
         }
 
         this.head.style.top = value +'px';
-
+        this.checkHeadBody();
+    
     }
     addBody(){
         this.element.insertAdjacentHTML("beforeend","<div></div>");
@@ -50,11 +51,11 @@ class Snake{
         
 
     }
-    checkHeadBody(X:number,Y:number){
+    checkHeadBody(){
         for (let i = 4 ;i<this.body.length;i++){
             let hd = this.body[i] as HTMLElement;
-            if (hd.offsetLeft===X&&hd.offsetTop===Y){
-                throw new Error("撞身体了")
+            if(hd.offsetLeft == this.x &&hd.offsetTop === this.y ){
+                throw new Error("撞身体");
             }
         }
     }

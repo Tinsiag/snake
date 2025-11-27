@@ -49,13 +49,12 @@ class GameControl{
         try {
             this.snake.x = X;
             this.snake.y = Y;
-            this.snake.checkHeadBody(X,Y);
         } catch (e:any) {
             alert(e.message);
             this.isLive=false;
         }
         //定时器
-        this.isLive&&setTimeout(this.run.bind(this),300-(this.scorePanel.level-1)*3)
+        this.isLive&&setTimeout(this.run.bind(this),200-(this.scorePanel.level-1)*3)
 
     }
     // checkeat
